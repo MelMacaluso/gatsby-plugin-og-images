@@ -1,0 +1,19 @@
+{
+  "name": "gatsby-plugin-og-images",
+  "version": "1.0.0",
+  "description": "lorem ipsum",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Mel Macaluso <mel@capeeshe.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^2.1.1",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "react": "^16.4.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
