@@ -1,0 +1,15 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: Install npm
+          command: npm i
+      - run:
+          name: Semantic realease
+          command: npx semantic-release

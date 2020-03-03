@@ -1,0 +1,41 @@
+{
+  "name": "gatsby-plugin-og-images",
+  "version": "0.0.0-development",
+  "description": "Generate OG images for your statically generated pages",
+  "private": false,
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "open-graph",
+    "seo",
+    "og-image"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "commit": "npx git-cz",
+    "semantic-release": "semantic-release"
+  },
+  "author": "Mel Macaluso <mel@capeeshe.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^2.1.1",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.1.0",
+    "react": "^16.4.2",
+    "semantic-release": "^17.0.4"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MelMacaluso/gatsby-plugin-og-images.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
