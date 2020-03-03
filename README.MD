@@ -4,14 +4,6 @@ Include a summary of what this plugin accomplishes. Is there a demo site that sh
 
 Themes are considered plugins in the Gatsby ecosystem and should follow this README as well. Note that themes include multiple READMEs. One inside the theme directory with configuration instructions, one inside the example project directory, and one in the root of the repository which will follow this guide.
 
-### Dependencies (optional)
-
-Are there any plugins that must be installed in order to make this plugin work? If so, please include a list of those plugins and links to their pages here.
-
-### Learning Resources (optional)
-
-If there are other tutorials, docs, and learning resources that are necessary or helpful to someone using this plugin, please link to those here.
-
 ## How to install
 
 Please include installation instructions here.
