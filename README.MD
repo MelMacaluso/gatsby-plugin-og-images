@@ -1,29 +1,59 @@
 ## Description
 
-Include a summary of what this plugin accomplishes. Is there a demo site that shows how this plugin operates? If so, include a link to the deployed demo site and/or its source code here.
-
-Themes are considered plugins in the Gatsby ecosystem and should follow this README as well. Note that themes include multiple READMEs. One inside the theme directory with configuration instructions, one inside the example project directory, and one in the root of the repository which will follow this guide.
+Easly get dynamically generated open graph images for your markdown pages out of a custom template of your own and use the nifty component to pass to your pages SEO ready og images.
 
 ## How to install
 
-Please include installation instructions here.
+1.  `yarn add gatsby-plugin-og-images` or `npm i gatsby-plugin-og-images`
+2.  Place your config options in your main `gatsby-config.js` as mentioned below.
 
-Gatsby documentation uses `npm` for installation. This is the recommended approach for plugins as well.
+Sample `gatsby-config.js` configuration:
 
-If the plugin is a theme that needs to use `yarn`, please point to [the documentation for switching package managers](/docs/gatsby-cli/#how-to-change-your-default-package-manager-for-your-next-project) in addition to the `yarn`-based instructions.
+```js
+plugins: [
+  {
+    resolve: 'gatsby-plugin-og-images',
+    options: {
+      emplate: 'og',
+      domain: process.env.GATSBY_DOMAIN
+    }
+  }
+];
+```
 
-## Available options (if any)
+## Available options
 
-## When do I use this plugin?
+| option   | value                                         | description                                                                                                           |
+| -------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| template | _string_ (required)                           | Provide here the template you want to use as the OG image page (from the `/templates` folder                          |
+| domain   | _string_ (required, unless hosted on Netlify) | Provide here the url of your website, you can obviously store it in a .env variable and ie. process.env.GATSBY_DOMAIN |
 
-Include stories about when this plugin is helpful and/or necessary.
+## In-built SEO component
 
-## Examples of usage
+In combo with og image generation the plugin provides a component that in combo with `react-helmet` provides SEO friendly og:images.
 
-This usually shows a code example showing how to include this plugin in a site's `config.js` file.
+To use it:
 
-    code example
+```jsx
+...
+import OgImage from  'gatsby-plugin-og-images'
+....
 
-//See this [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code) on how to format code examples.
+const  Og = ({ data }) => {
+	const { id } = data.markdownRemark
+	return (
+		<div>
+			...
+			<OgImage id={id}  />
+		</div>
+	)
+}
 
-This section could also include before-and-after examples of data when the plugin is enabled, if applicable.
+export const og = graphql`
+query og($id: String!) {
+	markdownRemark(id: { eq: $id }) {
+		id
+	}
+}`
+
+```
