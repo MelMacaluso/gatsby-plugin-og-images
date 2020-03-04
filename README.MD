@@ -14,7 +14,7 @@ plugins: [
   {
     resolve: 'gatsby-plugin-og-images',
     options: {
-      emplate: 'og',
+      template: 'og',
       domain: process.env.GATSBY_DOMAIN
     }
   }
