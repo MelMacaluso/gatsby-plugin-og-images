@@ -1,4 +1,6 @@
-# Description
+# Gatsby Plugin OG images
+
+## Description
 
 Easly get dynamically generated open graph images for your markdown pages out of a custom template of your own and use the nifty component to pass to your pages SEO ready og images.
 
