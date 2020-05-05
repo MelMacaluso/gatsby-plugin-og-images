@@ -30,7 +30,9 @@ plugins: [
 | -------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | template | _string_ (required)                           | Provide here the template you want to use as the OG image page (from the `/templates` folder                          |
 | domain   | _string_ (required, unless hosted on Netlify) | Provide here the url of your website, you can obviously store it in a .env variable and ie. process.env.GATSBY_DOMAIN |
-| debug    | _boolean_ (otional)                           | Log the generated og images                                                                                           |
+| width    | _number_ (optional)                           | Provide here the width of viewport (default is 640)                                                                   |
+| height   | _number_ (optional)                           | Provide here the height of viewport (default is 320)                                                                  |
+| debug    | _boolean_ (optional)                          | Log the generated og images                                                                                           |
 
 ## In-built SEO component
 

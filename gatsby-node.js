@@ -49,9 +49,11 @@ exports.createPages = async ({ actions, graphql }, options, cb) => {
 
 exports.onPostBuild = async (_, options) => {
   const { NETLIFY, URL } = process.env
-  const { debug } = options
+  const { debug, width, height } = options
   const domain = NETLIFY ? URL : options.domain
   const basePath = `${domain}/og-pages`
+  const viewportWidth = width || 640;
+  const viewportHeight = height || 320;
 
   if(debug) {
     console.info('The following og images have been generated:')
@@ -62,8 +64,8 @@ exports.onPostBuild = async (_, options) => {
     const page = await browser.newPage()
     const ogPagePath = `${basePath}/${ogPage}/`
     await page.setViewport({
-      width: 640,
-      height: 320,
+      width: viewportWidth,
+      height: viewportHeight
     })
     await page.goto(ogPagePath,  { 'waitUntil' : 'networkidle2' })
     await fs.mkdir(path.resolve('./public/og-images/'), () => {})
